@@ -1,0 +1,14 @@
+name: E-commerce CI
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - name: Compilar proyecto
+        run: python -m compileall .
